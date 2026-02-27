@@ -4,8 +4,8 @@ package com.example.task01;
  * Класс точки на плоскости
  */
 public class Point {
-    public int x;
-    public int y;
+    private int x;
+    private int y;
 
     public Point() {
         x = 0;

@@ -7,15 +7,21 @@ public class TimeSpan {
 
     public int getHours() { return hours; }
 
-    public void setHours(int hours) { this.hours = hours; }
+    public void setHours(int hours) {
+        setNormalizedTime(hours, this.minutes, this.seconds);
+    }
 
     public int getMinutes() { return minutes; }
 
-    public void setMinutes(int minutes) { this.minutes = minutes; }
+    public void setMinutes(int minutes) {
+        setNormalizedTime(this.hours, minutes, this.seconds);
+    }
 
     public int getSeconds() { return seconds; }
 
-    public void setSeconds(int seconds) { this.seconds = seconds; }
+    public void setSeconds(int seconds) {
+        setNormalizedTime(this.hours, this.minutes, seconds);
+    }
 
     public TimeSpan(int hours, int minutes, int seconds) {
         setNormalizedTime(hours, minutes, seconds);
