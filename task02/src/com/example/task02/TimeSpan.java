@@ -8,23 +8,25 @@ public class TimeSpan {
     public int getHours() { return hours; }
 
     public void setHours(int hours) {
-        setNormalizedTime(hours, this.minutes, this.seconds);
+        this.hours = hours;
     }
 
     public int getMinutes() { return minutes; }
 
     public void setMinutes(int minutes) {
-        setNormalizedTime(this.hours, minutes, this.seconds);
+        this.minutes = minutes;
     }
 
     public int getSeconds() { return seconds; }
 
     public void setSeconds(int seconds) {
-        setNormalizedTime(this.hours, this.minutes, seconds);
+        this.seconds = seconds;
     }
 
     public TimeSpan(int hours, int minutes, int seconds) {
-        setNormalizedTime(hours, minutes, seconds);
+        this.hours = hours;
+        this.minutes = minutes;
+        this.seconds = seconds;
     }
 
     private void setNormalizedTime(int hours, int minutes, int seconds) {
@@ -49,6 +51,7 @@ public class TimeSpan {
     }
 
     public String toString() {
+        setNormalizedTime(hours, minutes, seconds);
         return String.format("%02d:%02d:%02d", hours, minutes, seconds);
     }
 }
